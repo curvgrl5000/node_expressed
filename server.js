@@ -10,7 +10,6 @@ app.listen(port, function () {
   console.log('Server is running on port: ' + port);
 });
 
-
 // ===========================
 // routes
 // ===========================
@@ -20,4 +19,8 @@ app.get('/', function (request, response) {
 });
 
 // 'get' is the express method for the getter or GET request
+
+// bash sugar: set the PORT=4000 node server.js
+// just like the SERVE gem
+
 
