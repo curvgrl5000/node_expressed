@@ -4,6 +4,7 @@
 
 var express = require('express');
 var app = express();
+var exphbs = require('express-handlebars');
 var port = process.env.PORT || 3000;
 
 app.listen(port, function () {
@@ -15,7 +16,7 @@ app.listen(port, function () {
 // ===========================
 
 app.get('/', function (request, response) {
-  response.send('Hi there');
+  response.render('home', { title: 'My Site' });
 });
 
 // 'get' is the express method for the getter or GET request
@@ -24,3 +25,16 @@ app.get('/', function (request, response) {
 // just like the SERVE gem
 
 
+// ===========================
+// middleware & config
+// ===========================
+
+app.set('views', 'views');
+
+app.engine('hbs', exphbs({
+	extname: 'hbs',
+	defaultLayout: 'main',
+	layoutsDir: './views/layouts'
+}));
+
+app.set('view engine', 'hbs');

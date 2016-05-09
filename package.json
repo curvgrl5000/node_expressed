@@ -1,7 +1,7 @@
 {
   "name": "node_js_workshop",
   "version": "1.0.0",
-  "private": true,
+  "private": "true",
   "description": "learning about node and express",
   "main": "app.js",
   "scripts": {
@@ -10,11 +10,12 @@
   "author": "anna_mendoza",
   "license": "ISC",
   "repository": {
-   "type": "git",
-   "url": "git://git@github.com:curvgrl5000/node_expressed.git" 
-  }
+    "type": "git",
+    "url": "git://git@github.com:curvgrl5000/node_expressed.git"
+  },
   "dependencies": {
     "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
     "form-data": "^1.0.0-rc4"
   }
 }
