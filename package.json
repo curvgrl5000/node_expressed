@@ -1,0 +1,11 @@
+{
+  "name": "node_js_workshop",
+  "version": "1.0.0",
+  "description": "learning about node and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "anna_mendoza",
+  "license": "ISC"
+}
