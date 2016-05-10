@@ -42,3 +42,5 @@ app.engine('hbs', exphbs({
 }));
 
 app.set('view engine', 'hbs');
+app.use(express.static('public'));
+
