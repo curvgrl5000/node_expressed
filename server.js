@@ -43,23 +43,6 @@ app.get('/projects', function (request, response) {
 		);
 	});
 
-	var options = {
-		headers: {
-			'User-Agent': 'curvgrl5000',
-			Authorization: 'token' + process.env.GITHUB_TOKEN
-		}   
-	};
-
-	function getBio() {
-		console.log()
-	}
-
-	axios.get('https://api.github.com/users/curvgrl5000', options)
-	.then(function ( results ) {
-		  response.render('projects', { title: 'Projects', bio: results:data });
-		
-	});
-
 });
 
 // 'get' is the express method for the getter or GET request

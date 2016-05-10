@@ -20,7 +20,7 @@ function getRepos() {
 }
 
 function githubInfo() {
-	// return axios.all([ getRepos(), getBio() ])
+	return axios.all([ getRepos(), getBio() ])
 		.then(function(results) {
 			var repos = results[0].data;
 			var repos = results[1].data;
