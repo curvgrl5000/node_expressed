@@ -19,6 +19,10 @@ app.get('/', function (request, response) {
   response.render('home', { title: 'My Site' });
 });
 
+app.get('/projects', function (request, response) {
+  response.render('projects', { title: 'Projects' });
+});
+
 // 'get' is the express method for the getter or GET request
 
 // bash sugar: set the PORT=4000 node server.js
