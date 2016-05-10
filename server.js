@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-var axios = require('axios');
 var exphbs = require('express-handlebars');
+var axios = require('axios');
+var githubService= require('./services/githubServices.js');
 var port = process.env.PORT || 3000;
 
 
@@ -30,19 +31,35 @@ app.get('/', function (request, response) {
 });
 
 app.get('/projects', function (request, response) {
+	githubService.githubInfo()
+	.then(function (results) {
+		console.log(results)
+		response.render('projects', 
+			{
+				title: 'My Projects',
+				bio: results.bio,
+				repos: results.repos
+			}
+		);
+	});
 
 	var options = {
 		headers: {
-			'User-Agent': 'curvgrl5000'
+			'User-Agent': 'curvgrl5000',
+			Authorization: 'token' + process.env.GITHUB_TOKEN
 		}   
 	};
 
+	function getBio() {
+		console.log()
+	}
+
 	axios.get('https://api.github.com/users/curvgrl5000', options)
 	.then(function ( results ) {
-		console.log( results.data )
+		  response.render('projects', { title: 'Projects', bio: results:data });
+		
 	});
-	
-  response.render('projects', { title: 'Projects' });
+
 });
 
 // 'get' is the express method for the getter or GET request
@@ -60,7 +77,12 @@ app.set('views', 'views');
 app.engine('hbs', exphbs({
 	extname: 'hbs',
 	defaultLayout: 'main',
-	layoutsDir: './views/layouts'
+	layoutsDir: './views/layouts',
+	helpers: {
+		json: function (context) {
+			return JSON.stringify(context);
+		}
+	}
 }));
 
 app.set('view engine', 'hbs');
