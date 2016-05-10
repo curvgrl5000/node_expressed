@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var axios = require('axios');
 var exphbs = require('express-handlebars');
 var port = process.env.PORT || 3000;
 
@@ -29,6 +30,18 @@ app.get('/', function (request, response) {
 });
 
 app.get('/projects', function (request, response) {
+
+	var options = {
+		headers: {
+			'User-Agent': 'curvgrl5000'
+		}   
+	};
+
+	axios.get('https://api.github.com/users/curvgrl5000', options)
+	.then(function ( results ) {
+		console.log( results.data )
+	});
+	
   response.render('projects', { title: 'Projects' });
 });
 

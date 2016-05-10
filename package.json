@@ -14,6 +14,7 @@
     "url": "git://git@github.com:curvgrl5000/node_expressed.git"
   },
   "dependencies": {
+    "axios": "^0.11.0",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
     "form-data": "^1.0.0-rc4"
