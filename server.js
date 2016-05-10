@@ -12,7 +12,7 @@ app.get('/', function (request, response) {
 	var favoriteLetters = ['a', 'b', 'c'];
 	var favoriteLinks = [
 		{text: "Apple", url: 'http://apple.com'},
-		{text: k"Facebook", url: 'http://facebook.com'}
+		{text: "Facebook", url: 'http://facebook.com'}
 	];
   response.render('home', { 
   	title: 'My Site',
