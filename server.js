@@ -14,10 +14,17 @@ app.get('/', function (request, response) {
 		{text: "Apple", url: 'http://apple.com'},
 		{text: "Facebook", url: 'http://facebook.com'}
 	];
+	var favoriteAuthors = [
+		{text: "Kurt Vonegut", url: 'https://en.wikipedia.org/wiki/Kurt_Vonnegut'},
+		{text: "Jonathen Frazen", url: 'https://en.wikipedia.org/wiki/Jonathan Franzen'},
+		{text: "David Foster Wallace", url: 'https://en.wikipedia.org/wiki/David Foster Wallace'}
+
+	];
   response.render('home', { 
   	title: 'My Site',
   	favorites: favoriteLetters,
-  	links: favoriteLinks 
+  	links: favoriteLinks,
+  	links: favoriteAuthors  
   });
 });
 
