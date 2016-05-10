@@ -1,9 +1,20 @@
-<h2>Favorite Links</h2>
+<h2>Favorite Authors!</h2>
 <ul>
-	{{ #each favoriteLinks as |favorite| }}
-		<li>{{favorite}}</li>
+	{{#each authors as |author| }}
+		<li><a href="{{author.url}}">{{author.text}}</a></li>
+
 	{{/each}}
 </ul>
+
+
+<h2>Favorite Links!</h2>
+<ul>
+	{{#each links as |link| }}
+		<li><a href="{{link.url}}">{{link.text}}</a></li>
+	{{/each}}
+</ul>
+
+
 
 
 

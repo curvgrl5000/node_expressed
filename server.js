@@ -24,7 +24,7 @@ app.get('/', function (request, response) {
   	title: 'My Site',
   	favorites: favoriteLetters,
   	links: favoriteLinks,
-  	links: favoriteAuthors  
+  	authors: favoriteAuthors  
   });
 });
 
