@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  background-color: #E4E60B;  
 }
 .repo-list-stats {
   float: right;
@@ -15,4 +16,13 @@ body {
 
 .repo-list-meta {
   color: #888;
+}
+
+.img-rounded {
+    border-radius: 6px;
+    mix-blend-mode: exclusion;
+}
+
+.colorfull {
+    background-color: #145a83;
 }

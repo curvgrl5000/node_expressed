@@ -1,1 +1,43 @@
-<h1>Projects</h1>
+<h1>My Projects</h1>
+
+<div class="row">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <li class="list-group-item colorfull">
+      <img src={{{bio.owner.avatar_url}}} class="img-rounded img-responsive"/></li>
+      <li class="list-group-item">Anna Mendoza | Curve Design</li>
+      <li class="list-group-item">gitHub: <a href={{{bio.owner.html_url}}} target= "_blank">{{bio.owner.login}}</a></li>
+      <li class="list-group-item">Joined:  Jul 5, 2012</li>
+    </ul>
+  </div>
+
+  <div class="col-md-9">
+    <ul class="list-group">
+    {{#each repos as |repo| }}
+      <li class="list-group-item">
+        <div class="repo-list-stats">
+          <span class="repo-list-stat-item">Repo language: {{repo.language}}</span>
+          <span class="repo-list-stat-item"><i class="fa fa-star"></i>0</span>
+          <span class="repo-list-stat-item"><i class="fa fa-code-fork"></i>1</span>
+        </div>
+        <h4>
+          {{repo.name}}
+        </h4>
+        <p>
+          Description: {{repo.description}}
+        </p>
+        <p>
+          Url: <a href={{{repo.html_url}}} target= "_blank">LINK HERE</a>
+        </p>        
+        <p class="repo-list-meta">
+          Updated: {{repo.created_at}}
+        </p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+
+{{json repos.owner.login}}
+{{json repos}}
