@@ -41,8 +41,8 @@ app.get('/', function (request, response) {
 		{text: "Kurt Vonegut", url: 'https://en.wikipedia.org/wiki/Kurt_Vonnegut'},
 		{text: "Jonathen Frazen", url: 'https://en.wikipedia.org/wiki/Jonathan Franzen'},
 		{text: "David Foster Wallace", url: 'https://en.wikipedia.org/wiki/David Foster Wallace'}
-
 	];
+  
   response.render('home', { 
   	title: 'My Site',
   	favorites: favoriteLetters,
@@ -56,7 +56,9 @@ app.get('/projects', function (request, response) {
 	
 	githubService.githubInfo()
 	.then(function (results) {
-		console.log('promise returning results ' + results.repos);
+		console.log('promise returning results ' + results.repo);
+		console.log(results.x);
+		
 		response.render('projects', 
 			{
 				title: 'My Projects',
@@ -97,6 +99,8 @@ app.use(express.static('public'));
 // server
 // ===========================
 
+
+// This is our listener and its happening Synchronously!
 app.listen(port, function() {
   console.log('Server is running on port: ' + port);
 });

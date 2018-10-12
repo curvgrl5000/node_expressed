@@ -2,6 +2,9 @@ var axios = require('axios');
 require('dotenv').config(); // is .env
 // old GITHUB_TOKEN: GITHUB_TOKEN=a7a42457830679ca8f3fe7e35409dfbb002e22ef
 
+var y = "hello"; // remains private to this global scope
+// ONLY THIS FILE has access to 'y' here.
+
 var githubService = function() {
 	let options = {
 		headers: {
@@ -9,7 +12,7 @@ var githubService = function() {
 			Authorization: 'token ' + process.env.GITHUB_TOKEN
 		}
 	};
-
+  
 	function getBio() {
 		console.log('calling getBios');
 		return axios.get('https://api.github.com/users/curvgrl5000', options);
@@ -27,7 +30,8 @@ var githubService = function() {
 			  console.log(results[0].data[0].name);
 				var repos = results[0].data;
 				var bio = results[0].data[0];
-				return { repos: repos, bio: bio }
+				var x = "hello";
+				return { repos: repos, bio: bio, x: x  }
 			});
 	}
 
